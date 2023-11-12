@@ -1,6 +1,6 @@
-import 'package:cognizflutter/constants/uiConstants.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
 import 'package:cognizflutter/model/contact/contact.dart';
-import 'package:cognizflutter/model/network/networkResponse.dart';
+import 'package:cognizflutter/model/network/network_response.dart';
 import 'package:cognizflutter/services/apiCalls/contact_api.dart';
 import 'package:cognizflutter/services/logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

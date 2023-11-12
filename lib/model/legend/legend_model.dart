@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart'; 
 
-part 'legendModel.freezed.dart';
-part 'legendModel.g.dart';
+part 'legend_model.freezed.dart';
+part 'legend_model.g.dart';
 
 @freezed
 class LegendModel with _$LegendModel {

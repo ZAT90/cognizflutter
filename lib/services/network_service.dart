@@ -1,10 +1,9 @@
-import 'package:cognizflutter/constants/apiConstants.dart';
-import 'package:cognizflutter/model/network/networkRequestBody.dart';
-import 'package:cognizflutter/model/network/networkResponse.dart';
+import 'package:cognizflutter/constants/api_constants.dart';
+import 'package:cognizflutter/model/network/network_request_body.dart';
+import 'package:cognizflutter/model/network/network_response.dart';
+import 'package:cognizflutter/services/logger.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-
-
 
 class AccessTokenResponse {
   String? accessToken;
@@ -77,7 +76,7 @@ Future<NetworkResponse<Model>> executeRequest<Model>(
     // print('response _preparedNetworkRequest: ${response.data}');
     return NetworkResponse.ok(response.data);
   } on DioException catch (error) {
-    print('error: $error');
+    logger.d('error: $error');
     final errorText = error.toString();
     if (error.requestOptions.cancelToken!.isCancelled) {
       return NetworkResponse.noData(errorText);

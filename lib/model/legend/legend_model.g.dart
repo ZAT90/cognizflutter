@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'legendModel.dart';
+part of 'legend_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

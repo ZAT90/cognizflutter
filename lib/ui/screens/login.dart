@@ -1,18 +1,16 @@
-import 'package:cognizflutter/blocs/forms/loginFormBloc.dart';
-import 'package:cognizflutter/constants/navConstants.dart';
-import 'package:cognizflutter/constants/uiConstants.dart';
+import 'package:cognizflutter/blocs/forms/login_form_bloc.dart';
+import 'package:cognizflutter/constants/nav_constants.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
 import 'package:cognizflutter/services/logger.dart';
-import 'package:cognizflutter/utils/colorToHex.dart';
+import 'package:cognizflutter/utils/color_to_hex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
-
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         body: BlocProvider(
       create: (context) => LoginFormBloc(),
@@ -20,9 +18,8 @@ class LoginScreen extends StatelessWidget {
         final loginFormBloc = BlocProvider.of<LoginFormBloc>(context);
         return FormBlocListener<LoginFormBloc, String, String>(
           onSuccess: (context, state) {
-            // TODO: implement listener
-            logger.d('state of form on succes: ${state}');
-            if(state.hasSuccessResponse){
+            //logger.d('state of form on succes: ${state}');
+            if (state.hasSuccessResponse) {
               Navigator.pushNamed(context, NavConstants.contacts);
             }
           },
@@ -95,7 +92,7 @@ class LoginScreen extends StatelessWidget {
                       width: UiConstants(context).width / 1.1,
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                          onPressed: ()=> logger.d('forgot password'),
+                          onPressed: () => logger.d('forgot password'),
                           child: const Text('Forgot password?')),
                     ),
                     const SizedBox(

@@ -1,11 +1,11 @@
 import 'package:cognizflutter/blocs/contact/contact_bloc.dart';
 
-import 'package:cognizflutter/constants/navConstants.dart';
-import 'package:cognizflutter/model/legend/legendModel.dart';
-import 'package:cognizflutter/ui/screens/contactList.dart';
+import 'package:cognizflutter/constants/nav_constants.dart';
+import 'package:cognizflutter/model/legend/legend_model.dart';
+import 'package:cognizflutter/ui/screens/contact_list.dart';
 import 'package:cognizflutter/ui/screens/landing.dart';
 import 'package:cognizflutter/ui/screens/login.dart';
-import 'package:cognizflutter/ui/screens/pieChart.dart';
+import 'package:cognizflutter/ui/screens/pie_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

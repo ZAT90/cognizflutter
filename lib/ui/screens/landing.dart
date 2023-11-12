@@ -1,9 +1,7 @@
-import 'package:cognizflutter/constants/navConstants.dart';
-import 'package:cognizflutter/constants/uiConstants.dart';
-import 'package:cognizflutter/model/legend/legendModel.dart';
+import 'package:cognizflutter/constants/nav_constants.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
+import 'package:cognizflutter/model/legend/legend_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:cognizflutter/blocs/contact/contact_bloc.dart';
-import 'package:cognizflutter/constants/uiConstants.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
 import 'package:cognizflutter/model/contact/contact.dart';
-import 'package:cognizflutter/utils/colorToHex.dart';
+import 'package:cognizflutter/utils/color_to_hex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:super_rich_text/super_rich_text.dart';
@@ -19,7 +19,7 @@ class ContactList extends StatelessWidget {
       body: SafeArea(
         child: BlocBuilder<ContactBloc, ContactState>(
           builder: (context, state) {
-            return Container(
+            return SizedBox(
               //  alignment: Alignment.center,
               height: UiConstants(context).height,
               width: UiConstants(context).width,

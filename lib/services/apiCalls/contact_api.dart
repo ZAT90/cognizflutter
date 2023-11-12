@@ -1,4 +1,4 @@
-import 'package:cognizflutter/constants/apiConstants.dart';
+import 'package:cognizflutter/constants/api_constants.dart';
 import 'package:cognizflutter/services/network_service.dart';
 
 class ContactApi {

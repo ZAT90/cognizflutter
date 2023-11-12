@@ -1,6 +1,6 @@
-import 'package:cognizflutter/constants/navConstants.dart';
-import 'package:cognizflutter/constants/uiConstants.dart';
-import 'package:cognizflutter/utils/blocObserver.dart';
+import 'package:cognizflutter/constants/nav_constants.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
+
 import 'package:cognizflutter/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,7 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = SimpleBlocObserver();
+  
+ // Bloc.observer = Simp
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MainApp());

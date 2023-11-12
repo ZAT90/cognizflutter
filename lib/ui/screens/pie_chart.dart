@@ -1,8 +1,7 @@
-import 'package:cognizflutter/constants/uiConstants.dart';
-import 'package:cognizflutter/model/legend/legendModel.dart';
-import 'package:cognizflutter/utils/colorToHex.dart';
+import 'package:cognizflutter/constants/ui_constants.dart';
+import 'package:cognizflutter/model/legend/legend_model.dart';
+import 'package:cognizflutter/utils/color_to_hex.dart';
 import 'package:cognizflutter/utils/indicator.dart';
-import 'package:cognizflutter/services/logger.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 

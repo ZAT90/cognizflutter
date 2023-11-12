@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'networkRequestBody.freezed.dart';
+part 'network_request_body.freezed.dart';
 
 @freezed
 class NetworkRequestBody with _$NetworkRequestBody {
