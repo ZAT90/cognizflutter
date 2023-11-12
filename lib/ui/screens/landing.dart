@@ -27,8 +27,10 @@ class LandingScreen extends StatelessWidget {
               width: UiConstants(context).width / 2,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, NavConstants.login, (route) => false);
+                    Navigator.pushNamed(
+                      context,
+                      NavConstants.login,
+                    );
                   },
                   child: const Text('Go To Login')),
             ),
@@ -39,8 +41,7 @@ class LandingScreen extends StatelessWidget {
               width: UiConstants(context).width / 2,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, NavConstants.pie, (route) => false,
+                    Navigator.pushNamed(context, NavConstants.pie,
                         arguments: LegendModel(
                             title: "Prospect By Status",
                             inner_title: "Total Prospects",

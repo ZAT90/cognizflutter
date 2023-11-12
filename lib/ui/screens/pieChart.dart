@@ -14,11 +14,12 @@ class PieScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<int> totalCount = legendModel!.legends!.map((e) => e.count!).toList();
     return Scaffold(
+      appBar: AppBar(),
       body: Stack(
         children: [
           pieWidget(context, legendModel),
           Positioned(
-              top: UiConstants(context).height / 2.1,
+              bottom: UiConstants(context).height / 2.5,
               left: UiConstants(context).width / 6,
               child: Column(
                 children: [
