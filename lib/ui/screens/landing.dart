@@ -14,7 +14,7 @@ class LandingScreen extends StatelessWidget {
       const Legends(name: 'Cold', color: UiConstants.coldColor, count: 90)
     ];
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: UiConstants(context).width,
         //color: Colors.black,
         child: Column(

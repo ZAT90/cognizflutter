@@ -1,4 +1,4 @@
-import 'package:cognizflutter/utils/colorToHex.dart';
+import 'package:cognizflutter/utils/color_to_hex.dart';
 import 'package:flutter/material.dart';
 
 class UiConstants {

@@ -1,6 +1,6 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'networkResponse.freezed.dart';
+part 'network_response.freezed.dart';
 
 @freezed
 class NetworkResponse<Model> with _$NetworkResponse {
