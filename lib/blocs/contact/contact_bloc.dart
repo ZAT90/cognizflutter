@@ -36,6 +36,8 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
             emit(ContactState.loadedContactList(
                 initList: contacts, searchedList: contacts));
           },
+          badRequest: (message) => emit(ContactState.loadError(message)),
+          noData: (message) => emit(ContactState.loadError(message)),
           orElse: () {});
     } else {
       // logger.d('init not empty: $initList');

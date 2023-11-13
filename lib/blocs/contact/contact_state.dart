@@ -7,4 +7,5 @@ class ContactState with _$ContactState {
   const factory ContactState.loadedContactList({required List<Data>? initList,
     required List<Data>? searchedList}) =
       LoadedContactList;
+   const factory ContactState.loadError(String? message) = LoadError; 
 }

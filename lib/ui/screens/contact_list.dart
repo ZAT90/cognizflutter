@@ -17,7 +17,18 @@ class ContactList extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: BlocBuilder<ContactBloc, ContactState>(
+        child: BlocConsumer<ContactBloc, ContactState>(
+          listenWhen: (previousState, state) => state is LoadError,
+          listener: (context, state) => state.whenOrNull(
+            loadError: (message) =>
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+                message!,
+                style: const TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+            )),
+          ),
           builder: (context, state) {
             return SizedBox(
               //  alignment: Alignment.center,
@@ -55,64 +66,74 @@ class ContactList extends StatelessWidget {
                                   const SizedBox(
                                     height: 20,
                                   ),
-                                  ListView.separated(
-                                    shrinkWrap: true,
-                                    itemCount: searchedList!.length,
-                                    itemBuilder: (context, index) {
-                                      return Card(
-                                        color:
-                                            HexColor(UiConstants.listItemColor),
-                                        shape: const RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(15))),
-                                        child: ListTile(
-                                          title: SuperRichText(
-                                            text: searchedList[index].name!,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium!
-                                                .merge(const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            othersMarkers: [
-                                              MarkerText(
-                                                  marker: UiConstants
-                                                      .textHighlightText,
-                                                  style: const TextStyle(
-                                                      color: Colors.blue))
-                                            ],
-                                          ),
-                                          // title: Text(
-                                          //   searchedList[index].name!,
-                                          //   style: Theme.of(context)
-                                          //       .textTheme
-                                          //       .bodyMedium!
-                                          //       .merge(const TextStyle(
-                                          //           color: Colors.black,
-                                          //           fontWeight:
-                                          //               FontWeight.bold)),
-                                          // ),
-                                          subtitle: SuperRichText(
-                                            text: searchedList[index].email!,
-                                            othersMarkers: [
-                                              MarkerText(
-                                                  marker: UiConstants
-                                                      .textHighlightText,
-                                                  style: const TextStyle(
-                                                      color: Colors.blue))
-                                            ],
-                                          ),
+                                  searchedList!.isEmpty
+                                      ? const Center(
+                                          child: Text('No contacts found'),
+                                        )
+                                      : ListView.separated(
+                                          shrinkWrap: true,
+                                          itemCount: searchedList.length,
+                                          itemBuilder: (context, index) {
+                                            return Card(
+                                              color: HexColor(
+                                                  UiConstants.listItemColor),
+                                              shape:
+                                                  const RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  15))),
+                                              child: ListTile(
+                                                title: SuperRichText(
+                                                  text:
+                                                      searchedList[index].name!,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyMedium!
+                                                      .merge(const TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  othersMarkers: [
+                                                    MarkerText(
+                                                        marker: UiConstants
+                                                            .textHighlightText,
+                                                        style: const TextStyle(
+                                                            color: Colors.blue))
+                                                  ],
+                                                ),
+                                                // title: Text(
+                                                //   searchedList[index].name!,
+                                                //   style: Theme.of(context)
+                                                //       .textTheme
+                                                //       .bodyMedium!
+                                                //       .merge(const TextStyle(
+                                                //           color: Colors.black,
+                                                //           fontWeight:
+                                                //               FontWeight.bold)),
+                                                // ),
+                                                subtitle: SuperRichText(
+                                                  text: searchedList[index]
+                                                      .email!,
+                                                  othersMarkers: [
+                                                    MarkerText(
+                                                        marker: UiConstants
+                                                            .textHighlightText,
+                                                        style: const TextStyle(
+                                                            color: Colors.blue))
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          separatorBuilder:
+                                              (BuildContext context,
+                                                  int index) {
+                                            return const SizedBox(
+                                              height: 15,
+                                            );
+                                          },
                                         ),
-                                      );
-                                    },
-                                    separatorBuilder:
-                                        (BuildContext context, int index) {
-                                      return const SizedBox(
-                                        height: 15,
-                                      );
-                                    },
-                                  ),
                                 ],
                               ),
                             ),

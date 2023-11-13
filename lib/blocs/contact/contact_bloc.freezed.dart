@@ -22,6 +22,7 @@ mixin _$ContactState {
     required TResult Function() loadInProgress,
     required TResult Function(List<Data>? initList, List<Data>? searchedList)
         loadedContactList,
+    required TResult Function(String? message) loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ContactState {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult? Function(String? message)? loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ContactState {
     TResult Function()? loadInProgress,
     TResult Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult Function(String? message)? loadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +49,7 @@ mixin _$ContactState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(LoadedContactList value) loadedContactList,
+    required TResult Function(LoadError value) loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +57,7 @@ mixin _$ContactState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(LoadedContactList value)? loadedContactList,
+    TResult? Function(LoadError value)? loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +65,7 @@ mixin _$ContactState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(LoadedContactList value)? loadedContactList,
+    TResult Function(LoadError value)? loadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +130,7 @@ class _$_Initial implements _Initial {
     required TResult Function() loadInProgress,
     required TResult Function(List<Data>? initList, List<Data>? searchedList)
         loadedContactList,
+    required TResult Function(String? message) loadError,
   }) {
     return initial();
   }
@@ -135,6 +142,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult? Function(String? message)? loadError,
   }) {
     return initial?.call();
   }
@@ -146,6 +154,7 @@ class _$_Initial implements _Initial {
     TResult Function()? loadInProgress,
     TResult Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult Function(String? message)? loadError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -160,6 +169,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(LoadedContactList value) loadedContactList,
+    required TResult Function(LoadError value) loadError,
   }) {
     return initial(this);
   }
@@ -170,6 +180,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(LoadedContactList value)? loadedContactList,
+    TResult? Function(LoadError value)? loadError,
   }) {
     return initial?.call(this);
   }
@@ -180,6 +191,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(LoadedContactList value)? loadedContactList,
+    TResult Function(LoadError value)? loadError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -235,6 +247,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() loadInProgress,
     required TResult Function(List<Data>? initList, List<Data>? searchedList)
         loadedContactList,
+    required TResult Function(String? message) loadError,
   }) {
     return loadInProgress();
   }
@@ -246,6 +259,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult? Function(String? message)? loadError,
   }) {
     return loadInProgress?.call();
   }
@@ -257,6 +271,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? loadInProgress,
     TResult Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult Function(String? message)? loadError,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -271,6 +286,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(LoadedContactList value) loadedContactList,
+    required TResult Function(LoadError value) loadError,
   }) {
     return loadInProgress(this);
   }
@@ -281,6 +297,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(LoadedContactList value)? loadedContactList,
+    TResult? Function(LoadError value)? loadError,
   }) {
     return loadInProgress?.call(this);
   }
@@ -291,6 +308,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(LoadedContactList value)? loadedContactList,
+    TResult Function(LoadError value)? loadError,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -403,6 +421,7 @@ class _$LoadedContactList implements LoadedContactList {
     required TResult Function() loadInProgress,
     required TResult Function(List<Data>? initList, List<Data>? searchedList)
         loadedContactList,
+    required TResult Function(String? message) loadError,
   }) {
     return loadedContactList(initList, searchedList);
   }
@@ -414,6 +433,7 @@ class _$LoadedContactList implements LoadedContactList {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult? Function(String? message)? loadError,
   }) {
     return loadedContactList?.call(initList, searchedList);
   }
@@ -425,6 +445,7 @@ class _$LoadedContactList implements LoadedContactList {
     TResult Function()? loadInProgress,
     TResult Function(List<Data>? initList, List<Data>? searchedList)?
         loadedContactList,
+    TResult Function(String? message)? loadError,
     required TResult orElse(),
   }) {
     if (loadedContactList != null) {
@@ -439,6 +460,7 @@ class _$LoadedContactList implements LoadedContactList {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(LoadedContactList value) loadedContactList,
+    required TResult Function(LoadError value) loadError,
   }) {
     return loadedContactList(this);
   }
@@ -449,6 +471,7 @@ class _$LoadedContactList implements LoadedContactList {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(LoadedContactList value)? loadedContactList,
+    TResult? Function(LoadError value)? loadError,
   }) {
     return loadedContactList?.call(this);
   }
@@ -459,6 +482,7 @@ class _$LoadedContactList implements LoadedContactList {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(LoadedContactList value)? loadedContactList,
+    TResult Function(LoadError value)? loadError,
     required TResult orElse(),
   }) {
     if (loadedContactList != null) {
@@ -477,6 +501,154 @@ abstract class LoadedContactList implements ContactState {
   List<Data>? get searchedList;
   @JsonKey(ignore: true)
   _$$LoadedContactListCopyWith<_$LoadedContactList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadErrorCopyWith<$Res> {
+  factory _$$LoadErrorCopyWith(
+          _$LoadError value, $Res Function(_$LoadError) then) =
+      __$$LoadErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? message});
+}
+
+/// @nodoc
+class __$$LoadErrorCopyWithImpl<$Res>
+    extends _$ContactStateCopyWithImpl<$Res, _$LoadError>
+    implements _$$LoadErrorCopyWith<$Res> {
+  __$$LoadErrorCopyWithImpl(
+      _$LoadError _value, $Res Function(_$LoadError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$LoadError(
+      freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadError implements LoadError {
+  const _$LoadError(this.message);
+
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'ContactState.loadError(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadError &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadErrorCopyWith<_$LoadError> get copyWith =>
+      __$$LoadErrorCopyWithImpl<_$LoadError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Data>? initList, List<Data>? searchedList)
+        loadedContactList,
+    required TResult Function(String? message) loadError,
+  }) {
+    return loadError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Data>? initList, List<Data>? searchedList)?
+        loadedContactList,
+    TResult? Function(String? message)? loadError,
+  }) {
+    return loadError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Data>? initList, List<Data>? searchedList)?
+        loadedContactList,
+    TResult Function(String? message)? loadError,
+    required TResult orElse(),
+  }) {
+    if (loadError != null) {
+      return loadError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(LoadedContactList value) loadedContactList,
+    required TResult Function(LoadError value) loadError,
+  }) {
+    return loadError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(LoadedContactList value)? loadedContactList,
+    TResult? Function(LoadError value)? loadError,
+  }) {
+    return loadError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(LoadedContactList value)? loadedContactList,
+    TResult Function(LoadError value)? loadError,
+    required TResult orElse(),
+  }) {
+    if (loadError != null) {
+      return loadError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadError implements ContactState {
+  const factory LoadError(final String? message) = _$LoadError;
+
+  String? get message;
+  @JsonKey(ignore: true)
+  _$$LoadErrorCopyWith<_$LoadError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
