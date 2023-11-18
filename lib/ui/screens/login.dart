@@ -110,47 +110,6 @@ class LoginScreen extends StatelessWidget {
                             )))
                   ],
                 ),
-                // Container(
-                //   width: UiConstants(context).width / 1.1,
-                //   color: Colors.red,
-                //   child: TextFieldBlocBuilder(
-                //     textFieldBloc: loginFormBloc.username,
-                //     keyboardType: TextInputType.emailAddress,
-                //     autocorrect: false,
-                //     decoration: UiConstants.textFieldWithoutIcons(
-                //         hintTextStr: 'User Name'),
-                //   ),
-                // ),
-                // Container(
-                //   width: UiConstants(context).width / 1.1,
-                //   color: Colors.red,
-                //   child: TextFieldBlocBuilder(
-                //     textFieldBloc: loginFormBloc.password,
-                //     autocorrect: false,
-                //     decoration: UiConstants.textFieldWithoutIcons(
-                //         hintTextStr: 'Password'),
-                //   ),
-                // ),
-
-                // BlocProvider(
-                //   create: (context) => LoginFormBloc(),
-                //   child: Builder(builder: (context) {
-                //     final loginFormBloc =
-                //         BlocProvider.of<LoginFormBloc>(context);
-                //     return FormBlocListener<LoginFormBloc, String, String>(
-                //       child: Column(
-                //         children: [
-                //           TextFieldBlocBuilder(
-                //             textFieldBloc: loginFormBloc.email,
-                //             keyboardType: TextInputType.emailAddress,
-                //             autocorrect: false,
-                //             decoration: UiConstants.textFieldWithoutIcons(),
-                //           )
-                //         ],
-                //       ),
-                //     );
-                //   }),
-                // )
               )),
         );
       }),
