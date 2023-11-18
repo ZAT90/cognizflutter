@@ -84,6 +84,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
       List<String> splittedSearch = searchVal.toLowerCase().split('');
       // logger.d('checkCsplittedMain: $splittedMain');
       try {
+        // returns the string with highlighting unique strings in required characters for single search string
         if (searchVal.length == 1) {
           for (int i = 0; i < splittedMain.length; i++) {
             if (splittedMain[i].toLowerCase() == splittedSearch.first) {
@@ -92,7 +93,9 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
             }
           }
           return splittedMain.join();
-        } else {
+        }
+        // returns the string with highlighting unique strings in required characters for multiple search string
+        else {
           for (int i = 0; i < splittedMain.length; i++) {
             if (splittedMain[i].toLowerCase() == splittedSearch.first) {
               //  logger.d('checkCsplittedMainFrom Search: ${splittedMain[i]}');
