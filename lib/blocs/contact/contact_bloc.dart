@@ -40,7 +40,6 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
           noData: (message) => emit(ContactState.loadError(message)),
           orElse: () {});
     } else {
-      // logger.d('init not empty: $initList');
       searchedList = initList
           .where((element) =>
               element.email!
@@ -48,31 +47,34 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
                   .contains(searchString!.toLowerCase()) ||
               element.name!.toLowerCase().contains(searchString.toLowerCase()))
           .toList();
-      if (searchString!.isNotEmpty) {
-        List<Data>? highlightedList = [];
 
-        for (Data contact in searchedList) {
-          String? name = contact.name;
-          String? email = contact.email;
-
-          String newName = replaceAfterCheck(name, searchString);
-          String newEmail = replaceAfterCheck(email, searchString);
-
-          contact = contact.copyWith(
-              name: newName.isNotEmpty ? newName : name,
-              email: newEmail.isNotEmpty ? newEmail : email);
-
-          highlightedList.add(contact);
-        }
-        // logger.d('searchedList after change: $highlightedList');
-        emit(ContactState.loadedContactList(
-            initList: initList, searchedList: highlightedList));
-      } else {
-        //  logger.d('searchString empty: $searchString');
-        emit(ContactState.loadedContactList(
-            initList: initList, searchedList: searchedList));
-      }
+      emit(ContactState.loadedContactList(
+          initList: initList,
+          searchedList: searchString!.isEmpty
+              ? searchedList
+              : getFilteredList(searchedList, initList, searchString)));
     }
+  }
+
+  List<Data>? getFilteredList(
+      List<Data>? searchedList, List<Data>? initList, String? searchString) {
+    List<Data>? highlightedList = [];
+
+    for (Data contact in searchedList!) {
+      String? name = contact.name;
+      String? email = contact.email;
+
+      String newName = replaceAfterCheck(name, searchString);
+      String newEmail = replaceAfterCheck(email, searchString);
+
+      contact = contact.copyWith(
+          name: newName.isNotEmpty ? newName : name,
+          email: newEmail.isNotEmpty ? newEmail : email);
+
+      highlightedList.add(contact);
+    }
+
+    return highlightedList;
   }
 
   String replaceAfterCheck(String? mainVal, String? searchVal) {
@@ -118,14 +120,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
       } catch (e) {
         logger.e('exception: $e');
       }
-
-      // String newMainVal = splitMainVal.join(
-      //     '${UiConstants.textHighlightText}$searchVal${UiConstants.textHighlightText}');
-      //  logger.d('checkCjoinedMainVal: $splitMainVal');
     }
-
-    // logger.d('checkCsearchVal: $searchVal');
-    // logger.d('checkCompatibility: $checkCompatibility');
     return '';
   }
 }
